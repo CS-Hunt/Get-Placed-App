@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { StyleSheet, Text, View, Image, SafeAreaView, ScrollView, useWindowDimensions, Linking, Button } from 'react-native'
+import { StyleSheet, Text, View, Image, SafeAreaView, ScrollView, useWindowDimensions, Linking, Button, TouchableHighlight } from 'react-native'
 import { Title, Avatar, Card, Paragraph } from 'react-native-paper';
 
 function ResourceDetail(props) {
@@ -49,9 +49,64 @@ function ResourceDetail(props) {
         },
     ];
 
+    const channel = [
+        {
+            image: `${channel1_Img}`,
+            title: `${channel1_title}`,
+            link: `${channel1_link}`,
+        },
+        {
+            image: `${channel2_Img}`,
+            title: `${channel2_title}`,
+            link: `${channel2_link}`,
+        },
+        {
+            image: `${channel3_Img}`,
+            title: `${channel3_title}`,
+            link: `${channel3_link}`,
+        },
+        {
+            image: `${channel4_Img}`,
+            title: `${channel4_title}`,
+            link: `${channel4_link}`,
+        },
+        {
+            image: `${channel5_Img}`,
+            title: `${channel5_title}`,
+            link: `${channel5_link}`,
+        },
+    ];
+    const website = [
+        {
+            image: `${Website1_Img}`,
+            title: `${Website1_title}`,
+            link: `${Website1_link}`,
+        },
+        {
+            image: `${Website2_Img}`,
+            title: `${Website2_title}`,
+            link: `${Website2_link}`,
+        },
+        {
+            image: `${Website3_Img}`,
+            title: `${Website3_title}`,
+            link: `${Website3_link}`,
+        },
+        {
+            image: `${Website4_Img}`,
+            title: `${Website4_title}`,
+            link: `${Website4_link}`,
+        },
+        {
+            image: `${Website5_Img}`,
+            title: `${Website5_title}`,
+            link: `${Website5_link}`,
+        },
+    ];
+
     return (
-        <View style={styles.Top}>
-            <ScrollView>
+        <View>
+            <ScrollView style={styles.Top}>
                 <View style={styles.headerStyle}>
                     <Title style={{ fontSize: 31, fontFamily: 'sans-serif', fontWeight: 'bold' }}>{title}</Title>
                 </View>
@@ -60,12 +115,11 @@ function ResourceDetail(props) {
                     style={{
                         borderBottomColor: 'grey',
                         borderBottomWidth: 0.5,
-                        width: "100%",
-                        alignItems: 'center',
-                        justifyContent: 'center',
+                        marginLeft: 70,
+                        marginRight: 70,
                     }}
                 />
-                <View style={[{ width: "90%", margin: 10, borderRadius: 10, alignItems: 'center', justifyContent: 'center' }]}>
+                <View style={[{ width: "90%", margin: 10, borderRadius: 10, alignItems: 'center' }]}>
                     <Button
                         title="docs"
                         color="#002223"
@@ -73,7 +127,7 @@ function ResourceDetail(props) {
                         onPress={() => Linking.openURL(docs)}
                     />
                 </View>
-                <Title>Best Courses</Title>
+                <Title style={{ fontSize: 25 }}>Best Courses</Title>
                 <View
                     style={{
                         borderBottomColor: 'grey',
@@ -84,27 +138,25 @@ function ResourceDetail(props) {
                         marginBottom: 10,
                     }}
                 />
-
                 <View>
                     <ScrollView
                         pagingEnabled
                         horizontal
                         onScroll={change}
                         showHorizontalScrollIndicator={false}
-                    // style={{ width, height }}
                     >
                         {course.map((image, index) => (
 
                             <View>
-                                <View>
+                                <TouchableHighlight key={index} onPress={() => Linking.openURL(image.link)}>
                                     <Image
                                         key={index}
                                         source={{ uri: image.image }}
                                         style={{ width, height, resizeMode: 'cover' }}
                                     />
-                                </View>
+                                </TouchableHighlight>
                                 <View style={styles.backdropView}>
-                                    <Text style={styles.headline} onPress={() => Linking.openURL(image.link)}>{image.title}</Text>
+                                    <Text style={styles.headline} key={index} onPress={() => Linking.openURL(image.link)}>{image.title}</Text>
                                 </View>
                             </View>
 
@@ -120,23 +172,105 @@ function ResourceDetail(props) {
                             </Text>
                         ))}
                     </View>
+                </View>
+
+                <Title style={{ fontSize: 25 }}>Youtube Channels</Title>
+                <View
+                    style={{
+                        borderBottomColor: 'grey',
+                        borderBottomWidth: 0.5,
+                        width: "100%",
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        marginBottom: 10,
+                    }}
+                />
+                <View>
+                    <ScrollView
+                        pagingEnabled
+                        horizontal
+                        onScroll={change}
+                        showHorizontalScrollIndicator={false}
+                    >
+                        {channel.map((image, index) => (
+
+                            <View>
+                                <TouchableHighlight onPress={() => Linking.openURL(image.link)}>
+                                    <Image
+                                        key={index}
+                                        source={{ uri: image.image }}
+                                        style={{ width, height, resizeMode: 'cover' }}
+                                    />
+                                </TouchableHighlight>
+                                <View style={styles.backdropView}>
+                                    <Text style={styles.headline} onPress={() => Linking.openURL(image.link)}>{image.title}</Text>
+                                </View>
+                            </View>
+
+
+                        ))}
+
+                    </ScrollView>
+
+                    <View style={styles.pagination1}>
+                        {channel.map((i, k) => (
+                            <Text key={k} style={k == active ? styles.activeDot : styles.dot}>
+                                •
+                            </Text>
+                        ))}
+                    </View>
 
 
 
 
                 </View>
-                {/* <Card>
-                    <Card.Title title="Card Title" subtitle="Card Subtitle" />
-                    <Card.Content>
-                        <Title>Card title</Title>
-                        <Paragraph>Card content</Paragraph>
-                    </Card.Content>
-                    <Card.Cover source={{ uri: 'https://picsum.photos"1000' }} />
-                    <Card.Actions>
-                        <Button>Cancel</Button>
-                        <Button>Ok</Button>
-                    </Card.Actions>
-                </Card> */}
+                <Title style={{ fontSize: 25 }}>Useful Websites</Title>
+                <View
+                    style={{
+                        borderBottomColor: 'grey',
+                        borderBottomWidth: 0.5,
+                        width: "100%",
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        marginBottom: 10,
+                    }}
+                />
+                <View>
+                    <ScrollView
+                        pagingEnabled
+                        horizontal
+                        onScroll={change}
+                        showHorizontalScrollIndicator={false}
+                    >
+                        {website.map((image, index) => (
+
+                            <View>
+                                <TouchableHighlight onPress={() => Linking.openURL(image.link)}>
+                                    <Image
+                                        key={index}
+                                        source={{ uri: image.image }}
+                                        style={{ width, height, resizeMode: 'cover' }}
+                                    />
+                                </TouchableHighlight>
+                                <View style={styles.backdropView}>
+                                    <Text style={styles.headline} onPress={() => Linking.openURL(image.link)}>{image.title}</Text>
+                                </View>
+                            </View>
+
+
+                        ))}
+
+                    </ScrollView>
+
+                    <View style={styles.pagination2}>
+                        {website.map((i, k) => (
+                            <Text key={k} style={k == active ? styles.activeDot : styles.dot}>
+                                •
+                            </Text>
+                        ))}
+                    </View>
+                </View>
+
             </ScrollView>
         </View >
 
@@ -147,6 +281,7 @@ function ResourceDetail(props) {
 const styles = StyleSheet.create({
     Top: {
         marginTop: 40,
+        position: 'relative',
     },
     headerStyle: {
         alignItems: 'center',
@@ -154,6 +289,18 @@ const styles = StyleSheet.create({
         marginBottom: 5,
     },
     pagination: {
+        flexDirection: 'row',
+        position: 'absolute',
+        bottom: 29,
+        alignSelf: 'center',
+    },
+    pagination1: {
+        flexDirection: 'row',
+        position: 'absolute',
+        bottom: 29,
+        alignSelf: 'center',
+    },
+    pagination2: {
         flexDirection: 'row',
         position: 'absolute',
         bottom: 29,
@@ -167,18 +314,7 @@ const styles = StyleSheet.create({
         color: '#FFF',
         fontSize: 50,
     },
-    // imageStyle: {
-    //     backgroundColor: '#940',
-    // },
-    resourceTitle: {
-        position: 'absolute',
-        top: 120,
-        left: 0,
-        right: 0,
-        bottom: 0,
-        justifyContent: 'center',
-        alignItems: 'center'
-    },
+
     backdrop: {
         paddingTop: 60,
         width: 320,

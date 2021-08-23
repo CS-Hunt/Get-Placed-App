@@ -8,6 +8,7 @@
     "eject": "expo eject"
   },
   "dependencies": {
+    "@react-navigation/material-bottom-tabs": "^6.0.5",
     "@react-navigation/native": "^6.0.2",
     "@react-navigation/stack": "^6.0.7",
     "expo": "~42.0.1",
@@ -19,6 +20,7 @@
     "react-native-imaged-carousel-card": "^0.1.1",
     "react-native-paper": "^4.9.2",
     "react-native-snap-carousel": "^3.9.1",
+    "react-native-vector-icons": "^8.1.0",
     "react-native-web": "^0.17.1"
   },
   "devDependencies": {

@@ -26,14 +26,13 @@ export default function Home(props) {
     }, [])
 
     const clickedItem = (data) => {
-        props.navigation.navigate("ResourceDetail", { data: data })
+        props.navigation.navigate("Resource-Detail", { data: data })
     }
 
     const renderData = (item) => {
         return (
             <Card style={styles.cardStyle} onPress={() => clickedItem(item)}>
                 <Text style={{ fontSize: 25 }}>{item.title}</Text>
-                {/* <Text style={{ fontSize: 17 }}>{item.docs}</Text> */}
             </Card>
         )
     }
