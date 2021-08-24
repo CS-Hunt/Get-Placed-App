@@ -11,7 +11,10 @@ import Create from './Screen/Create';
 import ResourceDetail from './Screen/ResourceDetail';
 import JobList from './Screen/JobList';
 import JobDetail from './Screen/JobDetail';
-import { NavigationContainer } from '@react-navigation/native'
+import Blog from './Screen/Blog';
+import Profile from './Screen/Profile';
+import OnboardingScreen from './Screen/OnboardingScreen';
+import { NavigationContainer, getFocusedRouteNameFromRoute } from '@react-navigation/native'
 
 
 const HomeStack = createStackNavigator();
@@ -19,61 +22,95 @@ const DetailsStack = createStackNavigator();
 
 const Tab = createMaterialBottomTabNavigator();
 
+
 const MainTabScreen = () => (
   <>
     <StatusBar backgroundColor='#000' barStyle='light-content' />
     <NavigationContainer>
-      <Tab.Navigator
-        initialRouteName="Resources"
-        activeColor="#fff"
+      <HomeStack.Navigator
+        screenOptions={{
+          headerStyle: {
+            backgroundColor: '#002223',
+          },
+          headerTintColor: '#fff',
+          headerTitleStyle: {
+            fontWeight: 'bold'
+          }
+        }}
       >
-        <Tab.Screen
-          name="Home"
+        <HomeStack.Screen
+          name="Onboarding"
+          component={OnboardingScreen}
+          options={({ route }) => ({
+            header: () => null,
+          })}
+
+        />
+        <HomeStack.Screen
+          name="Resources"
           component={HomeStackScreen}
-          options={{
-            tabBarLabel: 'Home',
-            tabBarColor: '#002223',
-            tabBarIcon: ({ color }) => (
-              <Icon name="ios-home" color={color} size={26} />
-            ),
-          }}
-        />
+          options={({ route }) => {
+            // backgroundColor: "#002223";
 
-        <Tab.Screen
-          name="Notifications"
-          component={DetailsStackScreen}
-          options={{
-            tabBarLabel: 'Job',
-            tabBarColor: '#002223',
-            tabBarIcon: ({ color }) => (
-              <Icon name="ios-search-outline" color={color} size={26} />
-            ),
-          }}
-        />
-        <Tab.Screen
-          name="Profile"
 
-          component={BlogStackScreen}
-          options={{
-            tabBarLabel: 'Blog',
-            tabBarColor: '#002223',
-            tabBarIcon: ({ color }) => (
-              <Icon name="clipboard-outline" color={color} size={26} />
-            ),
+            const routeName = getFocusedRouteNameFromRoute(route) ?? 'Resources';
+
+            switch (routeName) {
+              case 'Job List': {
+                return {
+                  headerTitle: 'Job List',
+                  headerLeft: () => (
+                    <Icon.Button name="ios-menu" size={25} backgroundColor="#002223" ></Icon.Button>
+                  )
+                };
+              }
+              case 'Blog': {
+                return {
+                  headerTitle: 'Blog',
+                  headerLeft: () => (
+                    <Icon.Button name="ios-menu" size={25} backgroundColor="#002223" ></Icon.Button>
+                  )
+                };
+              }
+              case 'Resources': {
+                return {
+                  headerTitle: 'Resources',
+                  headerLeft: () => (
+                    <Icon.Button name="ios-menu" size={25} backgroundColor="#002223" ></Icon.Button>
+                  )
+                };
+              }
+              case 'Profile':
+              default: {
+                return {
+                  headerTitle: 'Profile',
+                  headerLeft: () => (
+                    <Icon.Button name="ios-menu" size={25} backgroundColor="#002223" ></Icon.Button>
+                  )
+                };
+              }
+            }
+
           }}
+
         />
-        <Tab.Screen
-          name="Explore"
-          component={ProfileStackScreen}
-          options={{
-            tabBarLabel: 'Profile',
-            tabBarColor: '#002223',
-            tabBarIcon: ({ color }) => (
-              <Icon name="ios-person" color={color} size={26} />
-            ),
-          }}
-        />
-      </Tab.Navigator>
+        <HomeStack.Screen name="Create" component={Create} options={{
+          title: 'Create',
+        }} />
+
+        <HomeStack.Screen name="Resource-Detail" component={ResourceDetail} options={{
+          title: 'Resource Detail',
+        }} />
+        <HomeStack.Screen name="Job List" component={JobList} options={{
+          headerLeft: () => (
+            <Icon.Button name="ios-menu" size={25} backgroundColor="#002223" ></Icon.Button>
+          )
+        }} />
+        <HomeStack.Screen name="Job-Detail" component={JobDetail} options={{
+          title: 'Job Detail',
+        }} />
+
+      </HomeStack.Navigator>
     </NavigationContainer>
   </>
 );
@@ -81,29 +118,59 @@ const MainTabScreen = () => (
 export default MainTabScreen;
 
 const HomeStackScreen = ({ navigation }) => (
-  <HomeStack.Navigator screenOptions={{
-    headerStyle: {
-      backgroundColor: '#002223',
-    },
-    headerTintColor: '#fff',
-    headerTitleStyle: {
-      fontWeight: 'bold'
-    }
-  }}>
-    <HomeStack.Screen name="Resources" component={Resources} options={{
-      title: 'Resource List',
-      headerLeft: () => (
-        <Icon.Button name="ios-menu" size={25} backgroundColor="#002223" onPress={() => navigation.openDrawer()}></Icon.Button>
-      )
-    }} />
-    <HomeStack.Screen name="Create" component={Create} options={{
-      title: 'Create',
-    }} />
+  <Tab.Navigator>
+    <Tab.Screen
+      name="Resources"
+      component={Resources}
+      options={{
+        tabBarLabel: 'Resources ',
+        tabBarColor: '#002223',
+        tabBarIcon: ({ color }) => (
+          <Icon name="ios-home" color={color} size={26} />
+        ),
+      }}
 
-    <HomeStack.Screen name="Resource-Detail" component={ResourceDetail} options={{
-      title: 'Resource Detail',
-    }} />
-  </HomeStack.Navigator>
+    />
+    {/* <Tab.Screen name="Job List" component={JobList} options={{
+      headerLeft: () => (
+        <Icon.Button name="ios-menu" size={25} backgroundColor="#002223" ></Icon.Button>
+      )
+    }} /> */}
+    <Tab.Screen
+      name="Job List"
+      component={JobList}
+      options={{
+        tabBarLabel: 'Job',
+        tabBarColor: '#002223',
+        tabBarIcon: ({ color }) => (
+          <Icon name="ios-search-outline" color={color} size={26} />
+        ),
+      }}
+    />
+    <Tab.Screen
+      name="Blog"
+      component={Blog}
+      options={{
+        tabBarLabel: 'Blog',
+        tabBarColor: '#002223',
+        tabBarIcon: ({ color }) => (
+          <Icon name="clipboard-outline" color={color} size={26} />
+        ),
+      }}
+    />
+    <Tab.Screen
+      name="Profile"
+      component={Profile}
+      options={{
+        tabBarLabel: 'Profile',
+        tabBarColor: '#002223',
+        tabBarIcon: ({ color }) => (
+          <Icon name="ios-person" color={color} size={26} />
+        ),
+      }}
+    />
+
+  </Tab.Navigator>
 );
 
 const DetailsStackScreen = ({ navigation }) => (
@@ -129,13 +196,6 @@ const DetailsStackScreen = ({ navigation }) => (
 
 const BlogStackScreen = ({ navigation }) => (
   <DetailsStack.Navigator screenOptions={{
-    headerStyle: {
-      backgroundColor: '#002223',
-    },
-    headerTintColor: '#fff',
-    headerTitleStyle: {
-      fontWeight: 'bold'
-    }
   }}>
     <DetailsStack.Screen name="Blog" component={Resources} options={{
       headerLeft: () => (
