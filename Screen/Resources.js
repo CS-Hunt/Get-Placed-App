@@ -5,7 +5,7 @@ import { Card, FAB } from 'react-native-paper'
 
 
 
-export default function Home(props) {
+export default function Resources(props) {
     const [data, setdata] = useState([])
     const [loading, setLoading] = useState(true)
 
@@ -47,13 +47,13 @@ export default function Home(props) {
                 refreshing={loading}
                 keyExtractor={item => `${item.id}`}
             />
-            <FAB
+            {/* <FAB
                 style={styles.fab}
                 small={false}
                 icon="plus"
 
                 onPress={() => props.navigation.navigate("Create")}
-            />
+            /> */}
         </View>
 
 
