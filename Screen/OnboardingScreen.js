@@ -61,8 +61,8 @@ const OnboardingScreen = ({ navigation }) => {
                     backgroundColor: '#000',
                     image: <Image source={require('../assets/image1.png')}
                         style={{ width: 334, height: 317 }} />,
-                    title: 'Connect to the World',
-                    subtitle: 'A New Way To Connect With The World',
+                    title: 'Do more meaningful work',
+                    subtitle: 'We help you find the best courses, tutorials online.',
                 },
                 {
                     backgroundColor: '#000',

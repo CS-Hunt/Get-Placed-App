@@ -7,8 +7,9 @@ import RenderHtml from 'react-native-render-html';
 
 function JobDetail(props) {
 
-    const { id, title, snippet, author, Company_image, Job_Description, apply_link, job_type } = props.route.params.data;
+    const { id, title, snippet, author, Company_image, Job_Description, apply_link, job_type, post_date } = props.route.params.data;
     const { width } = useWindowDimensions();
+    var date = new Date(`${post_date}`)
 
     const source = {
         html: `
@@ -17,6 +18,7 @@ function JobDetail(props) {
     const tagsStyles = {
         body: {
             marginLeft: 20,
+            marginRight: 20,
         },
 
     };
@@ -25,8 +27,10 @@ function JobDetail(props) {
         <View>
             <ScrollView style={styles.Top}>
                 <View style={styles.headerStyle}>
-                    <Title style={{ fontSize: 31, marginLeft: 20, fontWeight: 'bold' }}>{title}</Title>
+                    <Title style={{ fontSize: 31, marginLeft: 20, fontWeight: 'bold' }}>{title}<Text style={{ fontSize: 14, fontWeight: 'normal', color: '#808080' }}>   -   ( {date.getDate()}-{date.getMonth()}-{date.getFullYear()})</Text></Title>
+
                 </View>
+
 
                 <View>
                     <Image
@@ -35,9 +39,6 @@ function JobDetail(props) {
                     />
                 </View>
                 <View>
-                    {/* <Text style={{ marginLeft: 20, }}>
-                        {Job_Description}
-                    </Text> */}
                     <RenderHtml
                         tagsStyles={tagsStyles}
                         contentWidth={width}
@@ -69,49 +70,6 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         marginBottom: 5,
     },
-    pagination: {
-        flexDirection: 'row',
-        position: 'absolute',
-        bottom: 29,
-        alignSelf: 'center',
-    },
-    pagination1: {
-        flexDirection: 'row',
-        position: 'absolute',
-        bottom: 29,
-        alignSelf: 'center',
-    },
-    pagination2: {
-        flexDirection: 'row',
-        position: 'absolute',
-        bottom: 29,
-        alignSelf: 'center',
-    },
-    dot: {
-        color: '#888',
-        fontSize: 50,
-    },
-    activeDot: {
-        color: '#FFF',
-        fontSize: 50,
-    },
-
-    backdrop: {
-        paddingTop: 60,
-        width: 320,
-        height: 120
-    },
-    backdropView: {
-        height: 120,
-        width: 320,
-        backgroundColor: 'rgba(0,0,0,0)',
-    },
-    headline: {
-        fontSize: 20,
-        textAlign: 'center',
-        backgroundColor: 'rgba(0,0,0,0)',
-        color: '#000'
-    }
 })
 
 export default JobDetail

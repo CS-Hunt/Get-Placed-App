@@ -14,6 +14,7 @@ import JobDetail from './Screen/JobDetail';
 import Blog from './Screen/Blog';
 import Profile from './Screen/Profile';
 import OnboardingScreen from './Screen/OnboardingScreen';
+import BlogDetail from './Screen/BlogDetail'
 import { NavigationContainer, getFocusedRouteNameFromRoute } from '@react-navigation/native'
 
 
@@ -108,6 +109,9 @@ const MainTabScreen = () => (
         }} />
         <HomeStack.Screen name="Job-Detail" component={JobDetail} options={{
           title: 'Job Detail',
+        }} />
+        <HomeStack.Screen name="Blog-Detail" component={BlogDetail} options={{
+          title: 'Blog Detail',
         }} />
 
       </HomeStack.Navigator>

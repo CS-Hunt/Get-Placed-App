@@ -119,11 +119,13 @@ function ResourceDetail(props) {
                         marginRight: 70,
                     }}
                 />
-                <View style={[{ width: "90%", margin: 10, borderRadius: 10, alignItems: 'center' }]}>
+                <View style={[{ width: "90%", margin: 10, alignItems: 'center', }]}>
                     <Button
                         title="docs"
                         color="#002223"
-                        style={[{ borderRadius: 10, }]}
+                        style={[{
+                            borderRadius: 10,
+                        }]}
                         onPress={() => Linking.openURL(docs)}
                     />
                 </View>
@@ -159,7 +161,6 @@ function ResourceDetail(props) {
                                     <Text style={styles.headline} key={index} onPress={() => Linking.openURL(image.link)}>{image.title}</Text>
                                 </View>
                             </View>
-
 
                         ))}
 

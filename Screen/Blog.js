@@ -5,12 +5,12 @@ import { Card, FAB } from 'react-native-paper'
 
 
 
-export default function Blog(props) {
+export default function JobList(props) {
     const [data, setdata] = useState([])
     const [loading, setLoading] = useState(true)
 
     const loadData = () => {
-        fetch('https://getplaced.pythonanywhere.com/api/job-post/', {
+        fetch('https://getplaced.pythonanywhere.com/api/blog/', {
             method: "GET"
         })
             .then(resp => resp.json())
@@ -26,35 +26,29 @@ export default function Blog(props) {
     }, [])
 
     const clickedItem = (data) => {
-        props.navigation.navigate("Job-Detail", { data: data })
+        props.navigation.navigate("Blog-Detail", { data: data })
     }
 
     const renderData = (item) => {
+        var date = new Date(`${item.post_date}`)
         return (
             <>
-                <View style={{ flex: 1 }}>
-                    <View style={{ backgroundColor: "#eee", overflow: "hidden", flexDirection: 'row', flexWrap: 'wrap' }}>
-                        <TouchableHighlight onPress={() => clickedItem(item)}>
-                            <Image
-                                source={{ uri: `${item.Company_image}` }}
-                                style={{
-                                    height: 135,
-                                    width: 155,
-                                    margin: 7,
+                <Card style={styles.cardStyle} onPress={() => clickedItem(item)}>
+                    <View style={{ flex: 1 }}>
+                        <Text
+                            onPress={() => clickedItem(item)}
+                            style={{ color: "#000", fontSize: 16, marginLeft: 15, }}>
+                            {item.title}
+                            <Text style={{ fontSize: 13, color: '#808080' }}>    -   ({date.getDate()}-{date.getMonth()}-{date.getFullYear()})</Text>
+                        </Text>
+                        <Text
+                            onPress={() => clickedItem(item)}
+                            style={{ color: "#808080", fontSize: 12, marginLeft: 17, }}>
+                            {item.snippet}
+                        </Text>
 
-                                }}
-                            />
-                        </TouchableHighlight>
-                        <View style={{ width: 155, marginTop: 10, }}>
-
-                            <Text
-                                onPress={() => clickedItem(item)}
-                                style={{ color: "#000", paddingTop: 5, fontSize: 16, }}>
-                                {item.title}
-                            </Text>
-                        </View>
                     </View>
-                </View>
+                </Card>
             </>
         )
     }
@@ -69,13 +63,13 @@ export default function Blog(props) {
                 refreshing={loading}
                 keyExtractor={item => `${item.id}`}
             />
-            {/* <FAB
+            <FAB
                 style={styles.fab}
                 small={false}
                 icon="plus"
 
                 onPress={() => props.navigation.navigate("Create")}
-            /> */}
+            />
         </View>
 
 
@@ -95,6 +89,5 @@ const styles = StyleSheet.create({
         margin: 46,
         right: -30,
         bottom: 0,
-
     }
 })

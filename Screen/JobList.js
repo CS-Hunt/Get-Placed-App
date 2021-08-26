@@ -30,6 +30,7 @@ export default function JobList(props) {
     }
 
     const renderData = (item) => {
+        var date = new Date(`${item.post_date}`)
         return (
             <>
 
@@ -56,6 +57,7 @@ export default function JobList(props) {
                                 style={{ color: "#000", paddingTop: 5, fontSize: 16, }}>
                                 {item.title}
                             </Text>
+                            <Text style={{ fontSize: 13, color: '#808080' }}>{date.getDate()}-{date.getMonth()}-{date.getFullYear()}</Text>
                         </View>
                     </View>
                 </View>
