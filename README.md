@@ -15,9 +15,28 @@
 <br/>
 
 ## OnBoarding UI
-![On Boarding Demo](https://github.com/CS-Hunt/Get-Placed-App/blob/master/github-asset/OnBoarding1.jpg)
-![On Boarding Demo](https://github.com/CS-Hunt/Get-Placed-App/blob/master/github-asset/OnBoarding2.jpg)
-![On Boarding Demo](https://github.com/CS-Hunt/Get-Placed-App/blob/master/github-asset/OnBoarding3.jpg)
+
+<div style="display:flex">
+<img src="https://github.com/CS-Hunt/Get-Placed-App/blob/master/github-asset/OnBoarding1.jpg" width="310" height="580" /> &nbsp;
+<img src="https://github.com/CS-Hunt/Get-Placed-App/blob/master/github-asset/OnBoarding2.jpg" width="310" height="580" /> &nbsp;
+<img src="https://github.com/CS-Hunt/Get-Placed-App/blob/master/github-asset/OnBoarding3.jpg" width="310" height="580" />
+</div>
+</br>
+
+## Project Demo
+
+<div style="display:flex">
+  <img align="left" src="https://github.com/CS-Hunt/Get-Placed-App/blob/master/github-asset/Resources.gif" width="310" height="600" /> 
+  <img align="right" src="https://github.com/CS-Hunt/Get-Placed-App/blob/master/github-asset/Jobs.gif" width="310" height="600" /> &nbsp;  
+</div>
+</br>
+
+<div style="display:flex">
+  <img src="https://github.com/CS-Hunt/Get-Placed-App/blob/master/github-asset/Blogs.gif" width="310" height="600" /> &nbsp;
+  <img src="https://github.com/CS-Hunt/Get-Placed-App/blob/master/github-asset/Create.jpg" width="310" height="600" /> &nbsp;
+  <img src="https://github.com/CS-Hunt/Get-Placed-App/blob/master/github-asset/Profile.jpg" width="310" height="600" /> 
+</div>
+</br>
 
 
 ## Getting Started

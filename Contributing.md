@@ -1,6 +1,6 @@
 #
 <div align="center">
-<img src="https://github.com/CS-Hunt/Get-Placed-App/blob/master/app/static/app/images/logo.jpeg" width="20%">
+<img src="https://github.com/CS-Hunt/Get-Placed/blob/master/app/static/app/images/logo.jpeg" width="20%">
 <b>
 </b>
 <h1>Welcome to the Get Placed Repository</h1>
