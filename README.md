@@ -26,8 +26,8 @@
 ## Project Demo
 
 <div style="display:flex">
-  <img align="left" src="https://github.com/CS-Hunt/Get-Placed-App/blob/master/github-asset/Resources.gif" width="265" height="555" /> 
-  <img align="right" src="https://github.com/CS-Hunt/Get-Placed-App/blob/master/github-asset/Jobs.gif" width="265" height="555" /> &nbsp;  
+  <img src="https://github.com/CS-Hunt/Get-Placed-App/blob/master/github-asset/Resources.gif" width="265" height="555" /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <img src="https://github.com/CS-Hunt/Get-Placed-App/blob/master/github-asset/Jobs.gif" width="265" height="555" /> &nbsp;  
 </div>
 </br>
 
