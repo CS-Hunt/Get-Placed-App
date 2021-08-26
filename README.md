@@ -14,6 +14,12 @@
 
 <br/>
 
+## OnBoarding UI
+![On Boarding Demo](https://github.com/CS-Hunt/Get-Placed-App/github-asset/OnBoarding1.jpg)
+![On Boarding Demo](https://github.com/CS-Hunt/Get-Placed-App/github-asset/OnBoarding2.jpg)
+![On Boarding Demo](https://github.com/CS-Hunt/Get-Placed-App/github-asset/OnBoarding3.jpg)
+
+
 ## Getting Started
 
 It was developed using [React Native](https://facebook.github.io/react-native/) and uses the Django REST API to fetch the posts.
@@ -38,12 +44,3 @@ or
 $ npm ios
 ```
 
-
-
-
-# Project Demo
-![React Navigation v5 Mix App iPhone Demo](https://raw.githubusercontent.com/itzpradip/react-navigation-v5-mix/master/app-interaction-demo-iphone.gif)
-### iPhone Demo
-
-![React Navigation v5 Mix App Android Demo](https://raw.githubusercontent.com/itzpradip/react-navigation-v5-mix/master/app-interaction-demo-android.gif)
-### Android Demo
