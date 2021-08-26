@@ -15,9 +15,9 @@
 <br/>
 
 ## OnBoarding UI
-![On Boarding Demo](https://github.com/CS-Hunt/Get-Placed-App/github-asset/OnBoarding1.jpg)
-![On Boarding Demo](https://github.com/CS-Hunt/Get-Placed-App/github-asset/OnBoarding2.jpg)
-![On Boarding Demo](https://github.com/CS-Hunt/Get-Placed-App/github-asset/OnBoarding3.jpg)
+![On Boarding Demo](https://github.com/CS-Hunt/Get-Placed-App/blob/master/github-asset/OnBoarding1.jpg)
+![On Boarding Demo](https://github.com/CS-Hunt/Get-Placed-App/blob/master/github-asset/OnBoarding2.jpg)
+![On Boarding Demo](https://github.com/CS-Hunt/Get-Placed-App/blob/master/github-asset/OnBoarding3.jpg)
 
 
 ## Getting Started
