@@ -17,9 +17,9 @@
 ## OnBoarding UI
 
 <div style="display:flex">
-<img src="https://github.com/CS-Hunt/Get-Placed-App/blob/master/github-asset/OnBoarding1.jpg" width="275" height="560" /> &nbsp;
-<img src="https://github.com/CS-Hunt/Get-Placed-App/blob/master/github-asset/OnBoarding2.jpg" width="275" height="560" /> &nbsp;
-<img src="https://github.com/CS-Hunt/Get-Placed-App/blob/master/github-asset/OnBoarding3.jpg" width="275" height="560" />
+<img src="https://github.com/CS-Hunt/Get-Placed-App/blob/master/github-asset/OnBoarding1.jpg" width="265" height="555" /> &nbsp;
+<img src="https://github.com/CS-Hunt/Get-Placed-App/blob/master/github-asset/OnBoarding2.jpg" width="265" height="555" /> &nbsp;
+<img src="https://github.com/CS-Hunt/Get-Placed-App/blob/master/github-asset/OnBoarding3.jpg" width="265" height="555" />
 </div>
 </br>
 
