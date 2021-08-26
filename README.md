@@ -21,12 +21,12 @@
 <img src="https://github.com/CS-Hunt/Get-Placed-App/blob/master/github-asset/OnBoarding2.jpg" width="265" height="555" /> &nbsp;
 <img src="https://github.com/CS-Hunt/Get-Placed-App/blob/master/github-asset/OnBoarding3.jpg" width="265" height="555" />
 </div>
-</br>
+
 
 ## Project Demo
 
 <div style="display:flex">
-  <img src="https://github.com/CS-Hunt/Get-Placed-App/blob/master/github-asset/Resources.gif" width="265" height="555" /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <img src="https://github.com/CS-Hunt/Get-Placed-App/blob/master/github-asset/Resources.gif" width="265" height="555" /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   <img src="https://github.com/CS-Hunt/Get-Placed-App/blob/master/github-asset/Jobs.gif" width="265" height="555" /> &nbsp;  
 </div>
 </br>
