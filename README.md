@@ -26,15 +26,15 @@
 ## Project Demo
 
 <div style="display:flex">
-  <img align="left" src="https://github.com/CS-Hunt/Get-Placed-App/blob/master/github-asset/Resources.gif" width="310" height="600" /> 
-  <img align="right" src="https://github.com/CS-Hunt/Get-Placed-App/blob/master/github-asset/Jobs.gif" width="310" height="600" /> &nbsp;  
+  <img align="left" src="https://github.com/CS-Hunt/Get-Placed-App/blob/master/github-asset/Resources.gif" width="265" height="555" /> 
+  <img align="right" src="https://github.com/CS-Hunt/Get-Placed-App/blob/master/github-asset/Jobs.gif" width="265" height="555" /> &nbsp;  
 </div>
 </br>
 
 <div style="display:flex">
-  <img src="https://github.com/CS-Hunt/Get-Placed-App/blob/master/github-asset/Blogs.gif" width="310" height="600" /> &nbsp;
-  <img src="https://github.com/CS-Hunt/Get-Placed-App/blob/master/github-asset/Create.jpg" width="310" height="600" /> &nbsp;
-  <img src="https://github.com/CS-Hunt/Get-Placed-App/blob/master/github-asset/Profile.jpg" width="310" height="600" /> 
+  <img src="https://github.com/CS-Hunt/Get-Placed-App/blob/master/github-asset/Blogs.gif" width="265" height="555" /> &nbsp;
+  <img src="https://github.com/CS-Hunt/Get-Placed-App/blob/master/github-asset/Create.jpg" width="265" height="555" /> &nbsp;
+  <img src="https://github.com/CS-Hunt/Get-Placed-App/blob/master/github-asset/Profile.jpg" width="265" height="555" /> 
 </div>
 </br>
 
