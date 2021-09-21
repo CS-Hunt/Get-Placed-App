@@ -1,10 +1,25 @@
 import React, { useState } from 'react'
-import { Alert, FlatList, Settings, StyleSheet, Text, View } from 'react-native';
+import { Alert, FlatList, Settings, StyleSheet, Text, View, Linking } from 'react-native';
 import { TextInput, Button } from 'react-native-paper';
 
 export default function Create() {
     const [title, setTitle] = useState("")
     const [body, setbody] = useState("")
+
+    const createTwoButtonAlert = () =>
+        Alert.alert(
+            "Alert",
+            "Add Blog through our website",
+            [
+                {
+                    text: "Cancel",
+                    onPress: () => console.log("Cancel Pressed"),
+                    style: "cancel"
+                },
+                { text: "OK", onPress: () => Linking.openURL('http://getplaced.pythonanywhere.com/Add_Blog_Post/') }
+            ]
+        );
+
     return (
         <View>
             <TextInput style={styles.inputStyle}
@@ -24,7 +39,7 @@ export default function Create() {
                 icon="pencil"
                 mode="contained"
                 color="#002223"
-                onPress={() => console.log("Button Pressed")}
+                onPress={createTwoButtonAlert}
             >Post Blog</Button>
         </View>
     )

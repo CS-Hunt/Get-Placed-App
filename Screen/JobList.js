@@ -3,8 +3,6 @@ import { Alert, Button, FlatList, StyleSheet, Text, View, Image, TouchableHighli
 
 import { Card, FAB } from 'react-native-paper'
 
-
-
 export default function JobList(props) {
     const [data, setdata] = useState([])
     const [loading, setLoading] = useState(true)
@@ -33,7 +31,6 @@ export default function JobList(props) {
         var date = new Date(`${item.post_date}`)
         return (
             <>
-
                 {/* <Card style={styles.cardStyle} onPress={() => clickedItem(item)}>
                     <Text style={{ fontSize: 25 }}>{item.title}</Text>
                 </Card> */}
